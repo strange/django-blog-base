@@ -14,4 +14,4 @@ def entry_url(entry, configuration):
         entry.pk,
         entry.slug,
     ]
-    return reverse('simple-blog-entry-detail', args=args)
+    return reverse('blog-base-entry-detail', args=args)

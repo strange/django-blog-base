@@ -7,7 +7,7 @@
     <title>Blog - {% block title %}Welcome{% endblock %}</title>
 </head>
 <body>
-    <p><a href="{% url simple-blog-entry-list configuration.configuration_key %}">Blog index</a></p>
+    <p><a href="{% url blog-base-entry-list configuration.configuration_key %}">Blog index</a></p>
     <div id="content">{% block content %}No content.{% endblock %}</div>
 </body>    
 </html>

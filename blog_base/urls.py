@@ -9,17 +9,17 @@ p = (
      { 'feed_dict': get_feeds() }),
 
     (r'^(?P<configuration_key>\w+)/$', views.entry_list, {},
-     'simple-blog-entry-list'),
+     'blog-base-entry-list'),
     (r'^(?P<configuration_key>\w+)/(?P<year>\d{4})/$', views.archive_year, {},
-     'simple-blog-archive-year'),
+     'blog-base-archive-year'),
     (r'^(?P<configuration_key>\w+)/(?P<year>\d{4})/(?P<month>[a-z]{3})/$',
-     views.archive_month, {}, 'simple-blog-archive-month'),
+     views.archive_month, {}, 'blog-base-archive-month'),
     (r'^(?P<configuration_key>\w+)/(?P<year>\d{4})/(?P<month>[a-z]{3})/(?P<day>\d{2})/$',
-     views.archive_day, {}, 'simple-blog-archive-day'),
+     views.archive_day, {}, 'blog-base-archive-day'),
     (r'^(?P<configuration_key>\w+)/(?P<year>\d{4})/(?P<month>[a-z]{3})/(?P<day>\d{2})/(?P<entry_id>\d+)-(?P<entry_slug>[\w\-]+)/$',
-     views.entry_detail, {}, 'simple-blog-entry-detail'),
+     views.entry_detail, {}, 'blog-base-entry-detail'),
     (r'^(?P<configuration_key>\w+)/(?P<category_slug>[\w-]+)/$',
-     views.category_detail, {}, 'simple-blog-category-detail'),
+     views.category_detail, {}, 'blog-base-category-detail'),
 
 )
 

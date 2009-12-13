@@ -29,7 +29,7 @@
             {% if entry.categories.count %}
             <p class="categories">
                 {% for category in entry.categories.all %}
-                {% if not forloop.last %}, {% endif %}<a href="{% url simple-blog-category-detail configuration.configuration_key category.slug %}">{{ category.name }}</a>
+                {% if not forloop.last %}, {% endif %}<a href="{% url blog-base-category-detail configuration.configuration_key category.slug %}">{{ category.name }}</a>
                 {% endfor %}
             </p>
             {% endif %}

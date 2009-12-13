@@ -20,7 +20,7 @@
         <h3>{% trans "Categories" %}</h3>
         <ul id="category-list">
             {% for category in category_list %}
-            <li><a href="{% url simple-blog-category-detail configuration.configuration_key category.slug %}">{{ category.name }}</a></li>
+            <li><a href="{% url blog-base-category-detail configuration.configuration_key category.slug %}">{{ category.name }}</a></li>
             {% endfor %}
         </ul>
         {% endif %}
