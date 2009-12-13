@@ -74,9 +74,13 @@ Example::
 
     from blog_base.blogs import BlogConfiguration
 
-    class DevelopmentBlogConfiguratio(BlogConfiguration):
+    class DevelopmentConfiguration(BlogConfiguration):
         entry_list_template_name = 'myblog/entry_list.html'
         feed_title = 'Feed for my blog'
+
+And register as such::
+
+    blogs.register('development', DevelopmentEntry, DevelopmentConfiguration)
 
 See ``blog_base.blogs.BlogConfiguration`` for documentation of all available
 attributes.
