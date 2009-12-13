@@ -1,0 +1,41 @@
+{% extends "blog_base/blog_base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Entry" %}: {{ entry.title }}{% endblock %}
+{% block bodyclass %}entry-detail{% endblock %}
+
+{% block blog_content %}
+<p class="prev-next">
+    {% if entry.get_previous_by_pub_date %}
+    <a href="{{ entry.get_previous_by_pub_date.get_absolute_url }}" class="previous">&larr; {{ entry.get_previous_by_pub_date.title|truncatewords:"3" }}</a>
+    {% else %}
+    <span class="previous">&larr; {% trans "No older entries" %}</span>
+    {% endif %}
+
+    {% if entry.get_next_by_pub_date %}
+    <a href="{{ entry.get_next_by_pub_date.get_absolute_url }}" class="next">{{ entry.get_next_by_pub_date.title|truncatewords:"3" }} &rarr;</a>
+    {% else %}
+    <span class="next">{% trans "No newer entries" %} &rarr;</span>
+    {% endif %}
+</p>    
+
+<div class="entry clearfix">
+    <h1>{{ entry.title }}{% if entry.is_draft %} <em>Draft</em>{% endif %}</h1>
+
+    <div class="body">{{ entry.body_html|safe }}</div>
+    
+    <div class="meta">
+        <p class="date clearfix">{% trans "Posted by" %} <a href="{{ entry.author.get_absolute_url }}">{{ entry.author.get_full_name }}</a>, {{ entry.pub_date|date:"d M, Y" }}.</p>
+        {% if entry.categories.count %}
+        <p class="categories"><span class="heading">Categor{{ entry.categories.count|pluralize:"y,ies" }}</span>
+            {% for category in entry.categories.all %}
+            {% if not forloop.last %}, {% endif %}<a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+            {% endfor %}
+        </p>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "blog_base/blog_base.html" %}
+
+{% load i18n %}
+{% load pagination_tags %}
+{% load blog_base_tags %}
+
+{% block title %}{% trans "Listing entries" %}{% endblock %}
+{% block bodyclass %}entry-list{% endblock %}
+
+{% block blog_content %}
+    {% block entry_list_heading %}<h1>{% trans "Latest entries" %}</h1>{% endblock %}
+
+    {% for entry in entry_list %}
+    <div class="entry">
+        <h2><a href="{% entry_url entry configuration %}">{{ entry.title }}</a>{% if entry.is_draft %} <em>Draft</em>{% endif %}</h2>
+
+        <div class="body">
+            {% if entry.summary %}
+            {{ entry.summary_html|safe }}
+            <p class="continue-reading"><a href="{% entry_url entry configuration %}">{% trans "Read on" %}</a></p>
+            {% else %}
+            {{ entry.body_html|safe }}
+            {% endif %}
+        </div>
+
+        <div class="meta">
+            <p class="author-date">{% trans "Posted by" %} <a href="{{ user.get_absolute_url }}">{{ entry.author.get_full_name|default:entry.author.username }}</a>, {{ entry.pub_date|date:"d M, Y" }}.</p>
+
+            {% if entry.categories.count %}
+            <p class="categories">
+                {% for category in entry.categories.all %}
+                {% if not forloop.last %}, {% endif %}<a href="{% url simple-blog-category-detail configuration.configuration_key category.slug %}">{{ category.name }}</a>
+                {% endfor %}
+            </p>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+    {% if paginator %}
+    {% paginate %}
+    {% endif %}
+{% endblock %}

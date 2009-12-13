@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-30 16:34+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:11 models.py:74
+msgid "name"
+msgstr "namn"
+
+#: models.py:25
+msgid "category"
+msgstr "kategori"
+
+#: models.py:26
+msgid "categories"
+msgstr "kategorier"
+
+#: models.py:35
+msgid "author"
+msgstr "författare"
+
+#: models.py:37
+msgid "title"
+msgstr "titel"
+
+#: models.py:72
+#, fuzzy
+msgid "entry"
+msgstr "Inlägg"
+
+#: models.py:75
+msgid "email"
+msgstr "epost"
+
+#: models.py:76
+msgid "(not displayed)"
+msgstr "(visas inte)"
+
+#: models.py:78
+msgid "website"
+msgstr "webbsida"
+
+#: models.py:79
+msgid "Address to your web site (including http://)"
+msgstr "Adress till din sida (med ledande http://)"
+
+#: models.py:81
+msgid "body"
+msgstr "text"
+
+#: templates/blog_base/default/blog_base.html:10
+msgid "Recommended reading"
+msgstr "rekommenderad läsning"
+
+#: templates/blog_base/default/blog_base.html:19
+msgid "Categories"
+msgstr "Kategorier"
+
+#: templates/blog_base/default/entry.html:14
+msgid "Read on"
+msgstr "Läs vidare"
+
+#: templates/blog_base/default/entry.html:21
+msgid "Posted by"
+msgstr "Postad av"
+
+#: templates/blog_base/default/entry.html:32
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Kommentar"
+msgstr[1] "Kommentarer"
+
+#: templates/blog_base/default/entry_archive_day.html:6
+#: templates/blog_base/default/entry_archive_day.html:10
+#: templates/blog_base/default/entry_archive_month.html:6
+#: templates/blog_base/default/entry_archive_month.html:10
+#: templates/blog_base/default/entry_archive_year.html:6
+#: templates/blog_base/default/entry_archive_year.html:10
+msgid "Entries from"
+msgstr "Inlägg från"
+
+#: templates/blog_base/default/entry_archive_day.html:10
+msgid "see all"
+msgstr "se alla"
+
+#: templates/blog_base/default/entry_archive_month.html:10
+#: templates/blog_base/default/entry_archive_year.html:10
+#: templates/blog_base/default/entry_list_by_category.html:9
+msgid "See all"
+msgstr "Se alla"
+
+#: templates/blog_base/default/entry_detail.html:5
+msgid "Entry"
+msgstr "Inlägg"
+
+#: templates/blog_base/default/entry_detail.html:13
+msgid "No older entries"
+msgstr "Inga äldre inlägg"
+
+#: templates/blog_base/default/entry_detail.html:19
+msgid "No newer entries"
+msgstr "Inga nyare inlägg"
+
+#: templates/blog_base/default/entry_detail.html:28
+msgid "comment on"
+msgid_plural "comments on"
+msgstr[0] "kommentar på"
+msgstr[1] "kommentarer på"
+
+#: templates/blog_base/default/entry_detail.html:36
+msgid "ago"
+msgstr "sen"
+
+#: templates/blog_base/default/entry_detail.html:46
+msgid "So, what do <em>you</em> think?"
+msgstr "Vad tycker <em>du</em>?"
+
+#: templates/blog_base/default/entry_detail.html:48
+msgid "Post comment"
+msgstr "Posta kommentar"
+
+#: templates/blog_base/default/entry_detail.html:51
+msgid "Comments closed for this entry."
+msgstr "Kommentarer är inte tillåtna till detta inlägg"
+
+#: templates/blog_base/default/entry_list.html:6
+#: templates/blog_base/default/entry_list_by_category.html:6
+msgid "Listing entries"
+msgstr "Listar inlägg"
+
+#: templates/blog_base/default/entry_list.html:10
+msgid "Latest entries"
+msgstr "Senaste inläggen"
+
+#: templates/blog_base/default/entry_list_by_category.html:9
+msgid "Entries from category"
+msgstr "Inlägg från kategori"

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load blog_base_tags %}
+
+{% block content %}
+    <div id="blog-content">{% block blog_content %}{% endblock %}</div>
+
+    <div id="blog-secondary-content">
+        {% if featured_list %}
+        <h3>{% trans "Featured Entries" %}</h3>
+        <ul id="featured-list">
+            {% for entry in featured_list %}
+            <li><a href="{% entry_url entry configuration %}">{{ entry.title }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+        {% if category_list %}
+        <h3>{% trans "Categories" %}</h3>
+        <ul id="category-list">
+            {% for category in category_list %}
+            <li><a href="{% url simple-blog-category-detail configuration.configuration_key category.slug %}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+{% endblock %}

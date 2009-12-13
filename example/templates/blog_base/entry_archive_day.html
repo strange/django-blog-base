@@ -1,0 +1,7 @@
+{% extends "blog_base/entry_list.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Entries from" %} {{ day|date:"b d, Y"|title }}{% endblock %}
+{% block bodyclass %}entry-archive-day{% endblock %}
+{% block entry_list_heading %}<h1>{% trans "Entries from" %} {{ day|date:"b d, Y"|title }} &mdash; {{ entry_list.count }} (<a href="{% url simple-blog-entry-list %}">{% trans "see all" %}</a>)</h1>{% endblock %}

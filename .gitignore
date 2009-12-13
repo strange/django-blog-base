@@ -1,0 +1,4 @@
+# Global
+*.pyc
+.DS_Store
+test.db

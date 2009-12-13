@@ -1,0 +1,7 @@
+{% extends "blog_base/entry_list.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Entries from" %} {{ year }}{% endblock %}
+{% block bodyclass %}entry-archive-year{% endblock %}
+{% block entry_list_heading %}<h1>{% trans "Entries from" %} {{ year }} &mdash; {{ entry_list.count }} (<a href="{% url simple-blog-entry-list configuration.configuration_key %}">{% trans "See all" %}</a>)</h1>{% endblock %}
