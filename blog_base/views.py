@@ -14,8 +14,8 @@ def entry_list(request, configuration_key, queryset=None, extra_context=None):
     configuration = get_configuration_or_404(configuration_key)
     return configuration.entry_list(request, queryset, extra_context)
 
-def entry_detail(request, configuration_key, year, month, day, entry_id,
-                 entry_slug, extra_context=None):
+def entry_detail(request, configuration_key, entry_id, year=None, month=None,
+                 day=None, entry_slug=None, extra_context=None):
     configuration = get_configuration_or_404(configuration_key)
     return configuration.entry_detail(request, entry_id, year, month, day,
                                       entry_slug, extra_context)
