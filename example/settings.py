@@ -8,7 +8,7 @@ USE_I18N = True
  
 DATABASE_ENGINE = 'sqlite3'
 DATABASE_NAME = ':memory:'
-# DATABASE_NAME = 'test.db'
+DATABASE_NAME = 'test.db'
 
 TIME_ZONE = 'UTC'
     

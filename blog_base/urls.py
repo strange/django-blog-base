@@ -18,9 +18,10 @@ p = (
      views.archive_day, {}, 'blog-base-archive-day'),
     (r'^(?P<configuration_key>\w+)/(?P<year>\d{4})/(?P<month>[a-z]{3})/(?P<day>\d{2})/(?P<entry_id>\d+)-(?P<entry_slug>[\w\-]+)/$',
      views.entry_detail, {}, 'blog-base-entry-detail'),
-    (r'^(?P<configuration_key>\w+)/(?P<category_slug>[\w-]+)/$',
+    (r'^(?P<configuration_key>\w+)/categories/(?P<category_slug>[\w-]+)/$',
      views.category_detail, {}, 'blog-base-category-detail'),
-
+    (r'^(?P<configuration_key>\w+)/search/$',
+     views.search, {}, 'blog-base-search'),
 )
 
 urlpatterns = patterns('', *p)

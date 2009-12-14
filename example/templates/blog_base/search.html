@@ -1,0 +1,10 @@
+{% extends "blog_base/entry_list.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Listing entries" %}{% endblock %}
+{% block bodyclass %}entry-list{% endblock %}
+
+{% block blog_content %}
+    {% block entry_list_heading %}<h1>{% trans "Search Results" %}</h1>{% endblock %}
+{% endblock %}

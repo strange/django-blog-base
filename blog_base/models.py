@@ -8,6 +8,7 @@ from django.db.models import permalink
 from django.utils.translation import ugettext_lazy as _
 
 from blog_base.managers import LiveEntryManager
+from blog_base.managers import EntryManager
 from blog_base import markup
 
 class Category(models.Model):
@@ -77,7 +78,7 @@ class BaseEntry(models.Model):
     input_format = models.PositiveIntegerField(choices=INPUT_FORMAT_CHOICES,
                                                default=markup.PLAIN_TEXT)
 
-    objects = models.Manager()
+    objects = EntryManager()
     live = LiveEntryManager()
     
     def is_draft(self):

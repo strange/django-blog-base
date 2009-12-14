@@ -37,3 +37,7 @@ def category_detail(request, configuration_key, category_slug,
                     extra_context=None):
     configuration = get_configuration_or_404(configuration_key)
     return configuration.category_detail(request, category_slug, extra_context)
+
+def search(request, configuration_key, extra_context=None):
+    configuration = get_configuration_or_404(configuration_key)
+    return configuration.search(request, extra_context)

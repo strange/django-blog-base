@@ -22,6 +22,9 @@ class BlogConfiguration(object):
     archive_month_template_name = 'blog_base/entry_archive_month.html'
     archive_day_template_name = 'blog_base/entry_archive_month.html'
     category_detail_template_name = 'blog_base/category_detail.html'
+    search_template_name = 'blog_base/search.html'
+
+    search_query_string_parameter_name = 'entry_query'
 
     # Admin settings
 
@@ -134,6 +137,25 @@ class BlogConfiguration(object):
         return object_list(request, queryset,
                            template_object_name=self.template_object_name,
                            template_name=self.category_detail_template_name,
+                           extra_context=extra_context,
+                           paginate_by=self.paginate_by)
+
+    def search(self, request, extra_context=None):
+        query = request.GET.get(self.search_query_string_parameter_name, '')
+        if query:
+            queryset = self.model.objects.search(query)
+        else:
+            queryset = self.model.objects.none()
+
+        extra_context = extra_context or {}
+        extra_context.update({
+            'query': query,
+            'configuration': self,
+        })
+
+        return object_list(request, queryset,
+                           template_object_name=self.template_object_name,
+                           template_name=self.search_template_name,
                            extra_context=extra_context,
                            paginate_by=self.paginate_by)
 
