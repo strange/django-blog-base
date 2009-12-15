@@ -200,7 +200,7 @@ class BlogConfigurations(object):
         except KeyError:
             raise BlogConfigurationNotRegistered
     
-    def get_model_and_configuration(self, configuration_key):
+    def get_configuration(self, configuration_key):
         """Return the blog model and configuration associated with
         ``configuration_key``.
         
@@ -218,4 +218,4 @@ configurations = BlogConfigurations()
 all = configurations.all
 register = configurations.register
 unregister = configurations.unregister
-get_model_and_configuration = configurations.get_model_and_configuration
+get_configuration = configurations.get_model_and_configuration

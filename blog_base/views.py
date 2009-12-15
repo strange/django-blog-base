@@ -6,7 +6,7 @@ from blog_base import blogs
 def get_configuration_or_404(configuration_key):
     """Return configuration instance for `configuration_key`."""
     try:
-        return blogs.get_model_and_configuration(configuration_key)
+        return blogs.get_configuration(configuration_key)
     except blogs.BlogConfigurationNotRegistered:
         raise http.Http404(u"Configuration does not exist.")
 
