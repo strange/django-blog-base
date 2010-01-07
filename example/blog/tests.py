@@ -1,7 +1,4 @@
 tests = """
->>> assert(True == False)
-
->>> fsdfsadfasd
 
 """
 
