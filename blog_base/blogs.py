@@ -218,4 +218,4 @@ configurations = BlogConfigurations()
 all = configurations.all
 register = configurations.register
 unregister = configurations.unregister
-get_configuration = configurations.get_model_and_configuration
+get_configuration = configurations.get_configuration
