@@ -1,4 +1,3 @@
-include setup.py
-include README.txt
 include LICENSE.txt
 include MANIFEST.in
+prune example
