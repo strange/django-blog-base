@@ -34,6 +34,8 @@ for (_configuration_key, _configuration) in blogs.all():
         list_filter = _configuration.admin_list_filter
         search_fields = _configuration.admin_search_fields
 
+        form = Form
+
         def get_fieldsets(self, request, obj=None):
             regular_fields = self.configuration.admin_regular_fields
             advanced_fields = self.configuration.admin_advanced_fields
