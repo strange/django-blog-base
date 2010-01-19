@@ -53,6 +53,9 @@ def get_feeds():
             def item_pubdate(self, obj):
                 return obj.pub_date
 
+            def item_link(self, obj):
+                return self.configuration.get_entry_absolute_url(obj)
+
         if _configuration.feed_format == feed_formats.ATOM:
             # Alter the class to support Atom feeds instead of RSS.
             EntryFeed.feed_type = feedgenerator.Atom1Feed

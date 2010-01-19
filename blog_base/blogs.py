@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.views.generic.date_based import archive_day
 from django.views.generic.date_based import archive_month
@@ -69,6 +70,18 @@ class BlogConfiguration(object):
         if request.user.is_staff:
             return self.model.objects.exclude(status=BaseEntry.HIDDEN)
         return self.model.live.all()
+
+    def get_entry_absolute_url(self, entry):
+        pub_date = entry.pub_date
+        args = [
+            self.configuration_key,
+            pub_date.year,
+            pub_date.strftime('%b').lower(),
+            pub_date.strftime('%d'),
+            entry.pk,
+            entry.slug,
+        ]
+        return reverse('blog-base-entry-detail', args=args)
 
     def entry_list(self, request, queryset=None, extra_context=None):
         if queryset is None:
