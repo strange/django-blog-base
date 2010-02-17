@@ -1,6 +1,7 @@
 {% extends "blog_base/blog_base.html" %}
 
 {% load i18n %}
+{% load blog_base_tags %}
 
 {% block title %}{% trans "Entry" %}: {{ entry.title }}{% endblock %}
 {% block bodyclass %}entry-detail{% endblock %}
@@ -8,13 +9,13 @@
 {% block blog_content %}
 <p class="prev-next">
     {% if entry.get_previous_by_pub_date %}
-    <a href="{{ entry.get_previous_by_pub_date.get_absolute_url }}" class="previous">&larr; {{ entry.get_previous_by_pub_date.title|truncatewords:"3" }}</a>
+    <a href="{% entry_url entry.get_previous_by_pub_date configuration %}" class="previous">&larr; {{ entry.get_previous_by_pub_date.title|truncatewords:"3" }}</a>
     {% else %}
     <span class="previous">&larr; {% trans "No older entries" %}</span>
     {% endif %}
 
     {% if entry.get_next_by_pub_date %}
-    <a href="{{ entry.get_next_by_pub_date.get_absolute_url }}" class="next">{{ entry.get_next_by_pub_date.title|truncatewords:"3" }} &rarr;</a>
+    <a href="{% entry_url entry.get_next_by_pub_date configuration %}" class="next">{{ entry.get_next_by_pub_date.title|truncatewords:"3" }} &rarr;</a>
     {% else %}
     <span class="next">{% trans "No newer entries" %} &rarr;</span>
     {% endif %}
