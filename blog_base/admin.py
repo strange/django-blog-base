@@ -36,23 +36,13 @@ for (_configuration_key, _configuration) in blogs.all():
 
         form = Form
 
-        def get_fieldsets(self, request, obj=None):
-            regular_fields = self.configuration.admin_regular_fields
-            advanced_fields = self.configuration.admin_advanced_fields
-
-            fields = (None, { 'fields': regular_fields })
-            advanced = ('Advanced options', {
-                'classes': ('collapse', ),
-                'fields': advanced_fields
-            })
-            return fields, advanced
-
         def formfield_for_foreignkey(self, db_field, request, **kwargs):
             if db_field.name == 'author':
                 kwargs['initial'] = request.user.pk
             return super(Admin, self).formfield_for_foreignkey(db_field,
                                                                request,
                                                                **kwargs)
+
     admin.site.register(_configuration.model, Admin)
 
 admin.site.register(Category, CategoryOptions)

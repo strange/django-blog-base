@@ -30,9 +30,6 @@ class BlogConfiguration(object):
     # Admin settings
 
     use_generic_admin = True
-    admin_regular_fields = ['title', 'slug', 'status', 'summary', 'body',
-                            'categories', 'related_entries']
-    admin_advanced_fields = ['pub_date', 'author', 'input_format']
     admin_list_display = ('title', 'author', 'pub_date', 'status')
     admin_list_filter = ('author', 'status')
     admin_search_fields = ('title', 'body', 'author__first_name',
